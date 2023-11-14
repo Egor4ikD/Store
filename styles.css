@@ -1,0 +1,378 @@
+/*Вывод доб товара*/
+.product-grid2{font-family:'Open Sans',sans-serif;position:relative}
+.product-grid2 .product-image2{overflow:hidden;position:relative}
+.product-grid2 .product-image2 a{display:block}
+.product-grid2 {width:260px;height:310px; display: inline-block;}
+.pic-1 {width: 250px; height:300px}
+.product-grid2 .add-to-cart{color:#fff;background-color:#404040;font-size:15px;text-align:center;width:250px;padding:10px 0;display:block;position:absolute;left:0;bottom:-100%;transition:all .3s;}
+.product-grid2 .add-to-cart:hover{background-color:#3498db;text-decoration:none}
+.product-grid2:hover .add-to-cart{bottom:0}
+
+.product-grid2 .product-new-label{background-color:#3498db;color:#fff;font-size:17px;padding:5px 10px;position:absolute;right:0;top:0;transition:all .3s}
+.product-grid2:hover .product-new-label{opacity:0}
+.product-grid2 .product-content{padding:20px 10px;text-align:left;}
+.product-grid2 .title{font-size:17px;margin:0 0 7px}
+.product-grid2 .price{color:#303030;font-size:15px}
+@media screen and (max-width:120px){.product-grid2{margin-bottom:30px}
+}
+/*Выовд корзины*/
+.project-tab {
+	width: 1500px;
+}
+
+.project-tab{
+    border: none;
+}
+.project-tab thead{
+    background: #f3f3f3;
+    color: #333;
+}
+/*Кнопка оформления заказа*/
+a.glo{
+ color:#5f7adb;
+ padding: 10px 20px;
+ width:210px;
+ text-decoration:none;
+ text-align:center;
+ margin:20px auto;
+ display: block;
+ background-image: linear-gradient(to left,transparent,transparent 50%,#5f7adb 50%,#5f7adb);
+ background-position: 100% 0;
+ background-size: 200% 100%;
+ transition: all .25s ease-in;
+ font: 400 18px tahoma;
+ border: 1px solid #5f7adb;
+}
+a.glo:hover {
+background-position: 0 0;
+color:#fff;
+text-decoration: none;
+}
+/*Кнопка удаления в корзине*/
+a.blubtn {
+  width:90px;
+  text-align:center;
+  display:block;
+  font-family: arial;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 14px;
+  border: #1071FF 1px solid;
+  color: #1071FF;
+  padding: 3px;
+  padding-left: 2px;
+  padding-right: 2px;
+   margin: 3px auto;
+  transition: .5s;
+  border-radius: 0px;
+}
+a.blubtn:hover {
+  top: 5px;
+  transition: .5s;
+  color: #ff0000;
+  border: #ff0000 1px solid;
+  border-radius: 10px;
+  text-decoration: none;
+}
+a.blubtn:active {
+  color: #000;
+  border: #1A1A1A 1px solid;
+  transition: .07s;
+  background-color: #FFF;
+}
+
+#index
+{
+	min-width: 936px;
+}
+{
+	background-image: url("./img/sonybackleft.png")
+	background-repeat: no-repeat
+	background-size: 98vmin, auto
+	background-position: 0.01% 75%
+	background-color: #ebebeb
+	margin: auto;
+}
+
+table
+{
+	border: solid 0px #000000;
+	width: 100%;
+	height: 100%;
+	font-family: Calibri;
+}
+
+td
+{
+	border: solid 0px #000000;
+}
+
+#headline
+{
+	height: 80px;
+	background-color: #5f7adb;
+	font-family: Calibri;
+}
+
+#brands
+{
+	text-align: center;
+}
+
+#brand
+{
+	width: 250px;
+}
+
+#phones 
+{
+	text-align: center;
+}
+#phone
+{
+	width: 300px;
+}
+
+#maintable
+{
+	width: 96vw;
+	height: 96vh;
+}
+
+#buy
+{
+	height: 65px;
+	text-align: right;
+	font-family: Calibri;
+}
+
+#our
+{
+	text-align: center;
+	height: 32px;
+	border-bottom: solid 1px #a2b2ee;
+	font-family: Calibri;
+}
+
+#log
+{
+	text-align: right;
+	background-color: #5f7adb;
+}
+
+#log_link
+{
+	margin-right: 10px;
+	text-align: right;
+	padding-left: 1400px;
+	color: white;
+	font-size: 18px;
+}
+
+#info
+{
+  text-align: center;
+	height: 32px;
+	font-family: Calibri;
+	padding-top: 10px;
+	padding-bottom: 30px;
+	font-size: 14px;
+	
+}
+
+#background_0
+{
+
+	width: 120vh;
+	height: 20vh;
+
+}
+
+#body2
+{
+	background-image: url("./img/sonybackleft.png");
+	background-repeat: no-repeat;
+	background-size: 80vmin, auto;
+	background-position: -0.01% 40%;
+	background-color: #ffff;
+	margin: auto
+}
+
+#box
+{
+	width: 100vw;
+	height: 100vh;
+	text-align: center;
+}
+
+#nampass
+{
+	width:600px;
+	height:400px;
+	border-radius: 20px 20px 20px 20px;
+	text-align: center;
+	margin-top: -300px;
+	margin-left: 450px;
+}
+
+#boxinbox
+{
+  margin-left: 2vw;
+}
+
+#ugolkrug
+{
+	width:600px;
+	height:400px;
+	border: solid 1px #a2b2ee;
+	border-radius: 50px 50px 50px 50px;
+	text-align: right;
+	margin-left: 450px;
+	margin-top: 160px;
+}
+
+#name
+{
+	margin-top: 16px;
+}
+
+#main
+{
+	text-align: right;
+	font-size: 30px;
+	color: white;
+	margin-left: 20px;
+}
+
+#avtorization
+{
+	text-align: center;
+	margin-top: -90px;
+	font-family: calibri;
+}
+
+#upstr
+{
+	background-color: blue;
+	height: 90px;
+	background-color: #5f7adb;
+}
+
+#input
+{
+	text-align: right;
+	font-size: 30px;
+	color: white;
+	margin-left: 1250px;
+}
+
+#reg
+{
+	width:600px;
+	height:400px;
+	border-radius: 50px 50px 50px 50px;
+	text-align: center;
+	margin-top: -350px;
+	margin-left: 450px;
+}
+
+ ul.nav
+{
+	margin-left: 0px;
+	padding-left: 650px;
+	padding-top: -70px;
+	list-style: none;
+}
+
+.nav li
+{ 
+	float: left;
+}
+
+ul.nav a
+{
+	display: block;
+	width: 5em;
+	padding:9px;
+	margin: 5px;
+	background-color: #f4f4f4;
+	text-decoration: none;
+	color: #333;
+	text-align: center;
+}
+
+ul.nav a:hover
+{
+	background-color: #333;
+  color: #f4f4f4;
+}
+							
+#namephone
+{
+	height: 32px;
+	color: black;
+	text-align: center;
+}
+
+#add
+{
+	margin-left: 100px;
+}
+
+#prod
+{
+	text-align: center;
+	margin-top: -250px;
+}
+
+#product
+{
+	height: 32px;
+	font-size: 32px;
+}
+
+#space
+{
+	padding-top: 200px;
+}
+#spaceid
+{
+	height: 0;
+}
+#logo
+{
+	margin-left:30px;
+  padding-top: 40px;
+}
+
+.void
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#voidcartup
+{
+	font-weight: bold;
+font-family: Calibri;
+	margin-top: 250px;
+  margin-left: 20px;
+
+}
+#voidcartdw
+{
+
+font-family: Calibri;
+
+  margin-top: 339px;
+  margin-left: -265px;
+}
+
+
+.voidmain
+{
+font-family: Calibri;
+  margin-top: 339px;
+  margin-left: 650px;
+}
