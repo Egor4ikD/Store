@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<?php session_start(); ?>
 <html>
     <head>
         <meta charset="utf-8">
@@ -8,8 +7,6 @@
 		<link rel="icon" href="favicon.ico" type = "image/vnd.microsoft.icon">
     </head>
 	<body>
-		<!--
-		<div id="maintable">-->
 			<div id="mainline"> </div>
 			<table>	
 				<tr>
@@ -21,28 +18,41 @@
 				</tr>
 			</table>
 <?php
-session_start();
 require_once('connect.php');
-$cart_query = "SELECT * FROM carts WHERE productid = $productid";
-$cart_result = $conn->query($cart_query);
+require_once('conlog.php');
 
-// Перемещение товаров из корзины в заказ
-while ($row = $cart_result->fetch_assoc()) {
-    $productid = $row['productid'];
-    $quantity = $row['quantity'];
-    $totalprice = 'quantity * price'; // Здесь необходимо вычислить общую сумму заказа на основе цен товаров
-
-    $insert_query = "INSERT INTO orders (userid, productid, quantity, totalprice) VALUES ($userid, $productid, $quantity, $totalprice)";
-    $conn->query($insert_query);
+if(isset($_SESSION['user']['id'])) {
+	// Добавление товара в таблицу "заказы"
+	$userid = $_SESSION['user']['id']; // Пример значения
+	$sql_insert_order = "INSERT INTO orders (userid) VALUES ('$userid')";
+	if ($conn->query($sql_insert_order) === TRUE) {
+	  $lastOrderId = $conn->insert_id; // Получаем ID последнего добавленного заказа
+	} else {
+	  echo "Error: " . $sql_insert_order . "<br>" . $conn->error;
+	}	
+	// Добавление товара в таблицу "заказанные_телефоны"
+		$query = "SELECT * FROM carts WHERE userid=" . $_SESSION['user']['id']; 
+		$result = mysqli_query($conn, $query);
+		
+	while ($row = mysqli_fetch_assoc($result)) { 
+		$userid = $row['userid']; 
+		$productid = $row['productid']; 
+		$quantity = $row['quantity']; 
+		$totalprice = $quantity * $row['totalprice'];
+	
+		$sql_insert_ordered_product = "INSERT INTO orderproducts (orderid, productid, quantity, totalprice) VALUES ('$lastOrderId', '$productid', '$quantity', '$totalprice')";			
+		if ($conn->query($sql_insert_ordered_product) === TRUE) {
+			
+		} else {
+			echo "Error: " . $sql_insert_ordered_product . "<br>" . $conn->error;
+		}
+	}
+	echo "<div class='orderprod'> <h1>ЗАКАЗ ОФОРМЛЕН</h1></div>";
+	$delete_query = "DELETE FROM carts WHERE productid = $productid and userid = $userid"; 
+	$conn->query($delete_query); 
+	mysqli_free_result($result);
 }
-
-// Очистка корзины после создания заказа
-$delete_query = "DELETE FROM cart WHERE productid = $productid";
-$conn->query($delete_query);
-
-// Закрытие соединения с базой данных
 $conn->close();
 ?>
 	</body>
 </html>
-
